@@ -3,11 +3,131 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <meta
         name="description"
         content="임창우의 휴일 시간대별 일과를 소개하는 페이지"
     >
+
     <title>나의 휴일 일과</title>
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            color: #25324a;
+            font-family: Arial, sans-serif;
+
+            background-image: url("images/background.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        header {
+            padding: 40px 20px 25px;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.65);
+        }
+
+        header h1 {
+            margin-top: 0;
+            letter-spacing: 2px;
+        }
+
+        nav {
+            margin-top: 20px;
+        }
+
+        nav a {
+            color: #315b91;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            width: 800px;
+            max-width: calc(100% - 60px);
+            margin: 40px auto;
+            padding: 30px;
+            background-color: rgba(255, 255, 255, 0.82);
+            border-radius: 24px;
+            box-shadow: 0 8px 24px rgba(51, 85, 130, 0.2);
+        }
+
+        section {
+            padding: 10px 5px;
+        }
+
+        section h2 {
+            color: #365f98;
+        }
+
+        p {
+            line-height: 1.8;
+        }
+
+        mark {
+            padding: 2px 6px;
+            background-color: #fff0a8;
+            border-radius: 5px;
+        }
+
+        time {
+            color: #284f80;
+        }
+
+        details {
+            margin-top: 25px;
+            padding: 15px 18px;
+            background-color: rgba(219, 238, 255, 0.8);
+            border-radius: 12px;
+        }
+
+        summary {
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        hr {
+            border: 0;
+            border-top: 1px solid rgba(72, 111, 157, 0.35);
+            margin: 25px 0;
+        }
+
+        footer {
+            padding: 20px;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.7);
+        }
+
+        footer hr {
+            max-width: 800px;
+            margin: 0 auto 20px;
+        }
+
+        footer a {
+            color: #315b91;
+            font-weight: bold;
+        }
+
+        @media (max-width: 600px) {
+            main {
+                max-width: calc(100% - 40px);
+                margin: 25px auto;
+                padding: 20px;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -15,7 +135,7 @@
         <h1>🎉 나의 휴일 일과</h1>
 
         <p>
-            휴식과 자기계발의 균형을 맞추는
+            시간에 쫓기지 않고 여유를 즐기는
             <mark>주말 루틴</mark>입니다.
         </p>
 
@@ -24,8 +144,6 @@
             <a href="#afternoon">오후</a> |
             <a href="#evening">저녁</a>
         </nav>
-
-        <hr>
     </header>
 
     <main>
@@ -34,38 +152,59 @@
 
             <p>
                 <time datetime="09:00"><strong>09:00</strong></time>
-                - 충분히 휴식하고 일어나기<br><br>
+                - 평일 동안 부족했던 잠을 보충하기 위해 알람 없이 여유롭게 일어납니다.
+                창문을 열어 환기하고 물을 한 잔 마시며 천천히 하루를 시작합니다.
+                <br><br>
 
-                <time datetime="10:00"><strong>10:00</strong></time>
-                - 여유롭게 <mark>브런치</mark> 즐기기<br><br>
+                <time datetime="09:30"><strong>09:30</strong></time>
+                - 가볍게 씻고 방을 정리한 뒤,
+                침대나 소파에서 휴대폰을 보며 편하게 시간을 보냅니다.
+                <br><br>
 
-                <time datetime="11:00"><strong>11:00</strong></time>
-                - 커피를 마시며 음악 감상하기
+                <time datetime="10:30"><strong>10:30</strong></time>
+                - 빵, 달걀, 과일과 커피를 준비해
+                여유롭게 <mark>브런치</mark>를 즐깁니다.
+                식사하면서 좋아하는 예능이나 영상을 봅니다.
+                <br><br>
+
+                <time datetime="11:30"><strong>11:30</strong></time>
+                - 좋아하는 음악을 들으며 쉬거나,
+                낮잠을 조금 더 자면서 오전 시간을 편하게 보냅니다.
             </p>
         </section>
 
         <hr>
 
         <section id="afternoon">
-            <h2>💻 성장하는 오후</h2>
+            <h2>☀️ 여유로운 오후</h2>
 
             <p>
                 <time datetime="13:00"><strong>13:00</strong></time>
-                - 이번 주 일정과 과제 정리하기<br><br>
+                - 점심을 먹고 소파에 앉아 영화를 보거나
+                평소 보고 싶었던 드라마를 감상합니다.
+                <br><br>
 
-                <time datetime="14:30"><strong>14:30</strong></time>
-                - HTML과 Git 실습 진행하기<br><br>
+                <time datetime="15:00"><strong>15:00</strong></time>
+                - 날씨가 좋으면 집 주변이나 공원을 산책합니다.
+                카페에 들러 음료를 마시며 여유롭게 시간을 보내기도 합니다.
+                <br><br>
 
-                <time datetime="16:00"><strong>16:00</strong></time>
-                - 산책하거나 친구 만나기
+                <time datetime="16:30"><strong>16:30</strong></time>
+                - 친구를 만나 맛있는 음식을 먹거나,
+                쇼핑을 하면서 기분 전환을 합니다.
+                <br><br>
+
+                <time datetime="17:30"><strong>17:30</strong></time>
+                - 집으로 돌아와 샤워하고 편한 옷으로 갈아입은 뒤
+                잠시 쉬면서 저녁 시간을 준비합니다.
             </p>
 
             <details>
-                <summary>오늘의 개발 학습 목표</summary>
+                <summary>휴일에 가장 하고 싶은 일</summary>
 
                 <p>
-                    HTML 시맨틱 태그를 활용하고,
-                    작성한 코드를 Git 브랜치에 커밋합니다.
+                    시간에 쫓기지 않고 충분히 쉬면서,
+                    좋아하는 음식과 영상, 산책을 즐기는 것입니다.
                 </p>
             </details>
         </section>
@@ -76,17 +215,26 @@
             <h2>🌙 편안한 저녁</h2>
 
             <p>
-                <time datetime="18:00"><strong>18:00</strong></time>
-                - 저녁 식사하기<br><br>
+                <time datetime="18:30"><strong>18:30</strong></time>
+                - 가족과 함께 저녁을 먹거나,
+                먹고 싶었던 음식을 주문해 편하게 식사합니다.
+                <br><br>
 
                 <time datetime="20:00"><strong>20:00</strong></time>
-                - 영화나 드라마 감상하기<br><br>
+                - 영화를 보거나 게임을 하면서
+                하루 중 가장 편안한 시간을 보냅니다.
+                <br><br>
 
-                <time datetime="23:00"><strong>23:00</strong></time>
-                - 하루를 기록하고 다음 날 계획 세우기
+                <time datetime="22:00"><strong>22:00</strong></time>
+                - 따뜻한 물로 샤워한 뒤 침대에 누워
+                음악이나 영상을 보며 휴식합니다.
+                <br><br>
+
+                <time datetime="23:30"><strong>23:30</strong></time>
+                - 다음 날 일정은 간단히 확인만 하고,
+                무리하지 않고 편안하게 잠자리에 듭니다.
             </p>
         </section>
-
     </main>
 
     <footer>
