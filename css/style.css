@@ -823,86 +823,6 @@ button[type="reset"] {
     }
 }
 
-@media (max-width: 800px) {
-    .site-page > header {
-        padding: 45px 20px 38px;
-    }
-
-    .site-page > main {
-        max-width: calc(100% - 24px);
-        margin: 25px auto;
-        padding: 24px;
-    }
-
-    .trip-gallery, .profile-info-grid, .profile-card-list, .keyword-list {
-        grid-template-columns: 1fr;
-    }
-
-    .profile-timeline::before, .routine-list::before {
-        display: none;
-    }
-
-    .timeline-item, .routine-card {
-        grid-template-columns: 1fr;
-        gap: 12px;
-    }
-
-    .timeline-item time, .routine-card time {
-        width: fit-content;
-        border-width: 0;
-    }
-
-}
-
-@media (max-width: 650px) {
-    .home-page .layout {
-        max-width: calc(100% - 24px);
-        margin: 25px auto;
-    }
-
-    .home-page .main-content, .home-page .sidebar {
-        padding: 22px;
-    }
-
-    .shortcut-list li {
-        flex-basis: 100%;
-    }
-
-    .holiday-nav {
-        gap: 8px;
-        padding: 12px 8px;
-    }
-
-    .holiday-nav a {
-        padding: 8px 12px;
-        font-size: 16px;
-    }
-
-    .audio-card, .video-card, .table-card {
-        padding: 15px;
-    }
-
-    .trip-gallery img {
-        height: 240px;
-    }
-
-    .button-group {
-        flex-direction: column;
-    }
-
-    button {
-        width: 100%;
-    }
-
-    footer a[href="index.html"] {
-        top: 10px;
-        left: 10px;
-        padding: 8px 12px;
-        font-size: 16px;
-    }
-
-}
-
 /* 10. 포트폴리오 페이지 */
 .portfolio-page > main {
     width: 1200px;
@@ -1106,30 +1026,6 @@ button[type="reset"] {
     font-size: 16px;
 }
 
-@media (max-width: 800px) {
-    .project-grid,
-    .skill-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .featured-project {
-        grid-column: auto;
-    }
-
-    .portfolio-nav {
-        flex-wrap: wrap;
-    }
-
-    .portfolio-nav a {
-        padding: 7px 12px;
-        font-size: 16px;
-    }
-
-    .award-card {
-        align-items: flex-start;
-    }
-
-}
 .project-button-area {
     margin-top: 20px;
 }
@@ -1428,23 +1324,55 @@ button[type="reset"] {
     margin-left: 8px;
 }
 
-.comment-form-footer {
+.comment-form-footer,
+.comment-list-heading,
+.comment-card-header,
+.comment-author-area,
+.comment-date-area,
+.comment-actions,
+.comment-edit-buttons {
     display: flex;
     align-items: center;
+}
+
+.comment-form-footer,
+.comment-list-heading,
+.comment-card-header {
     justify-content: space-between;
+}
+
+.comment-form-footer,
+.comment-list-heading {
     gap: 20px;
+}
+
+.comment-card-header {
+    gap: 15px;
+    margin-bottom: 12px;
+}
+
+.comment-author-area {
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.comment-date-area {
+    gap: 7px;
+}
+
+.comment-actions {
+    gap: 4px;
+    margin: 0;
+}
+
+.comment-edit-buttons {
+    justify-content: flex-end;
+    gap: 6px;
 }
 
 #characterCount {
     color: #607089;
     font-size: 15px;
-}
-
-.comment-list-heading {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
 }
 
 .comment-list-heading h2 {
@@ -1466,26 +1394,14 @@ button[type="reset"] {
 
 .comment-card {
     padding: 20px 22px;
-    background: linear-gradient(
-        145deg,
-        #ffffff,
-        #f4f8fc
-    );
+    background: linear-gradient(145deg, #ffffff, #f4f8fc);
     border: 1px solid #d5e2ef;
     border-radius: 14px;
-    box-shadow: 0 7px 18px
-        rgba(43, 83, 128, 0.08);
+    box-shadow: 0 7px 18px rgba(43, 83, 128, 0.08);
 }
 
-.comment-card-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 15px;
-    margin-bottom: 12px;
-}
-
-.comment-card-header strong {
+.comment-card-header strong,
+.comment-author-area > strong {
     color: #315b91;
 }
 
@@ -1514,60 +1430,46 @@ button[type="reset"] {
     color: #c0392b;
 }
 
-@media (max-width: 650px) {
-    .comment-form-footer,
-    .comment-card-header {
-        align-items: stretch;
-        flex-direction: column;
-    }
-
-    .comment-form-footer button {
-        width: 100%;
-    }
-}
-
-/* 댓글 수정·삭제 기능 */
-.comment-date-area {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
 .comment-edited {
-    padding: 3px 7px;
+    padding: 2px 6px;
     color: #607089;
-    font-size: 13px;
+    font-size: 11px;
     background: #edf3f9;
-    border-radius: 10px;
+    border-radius: 9px;
 }
 
-.comment-actions {
-    display: flex;
-    justify-content: flex-end;
-    gap: 8px;
-    margin-top: 15px;
-}
-
-.comment-actions button,
-.comment-edit-buttons button {
+.comment-actions button {
     width: auto;
-    min-width: 70px;
-    padding: 8px 14px;
-    font-size: 15px;
+    min-width: 0;
+    margin: 0;
+    padding: 3px 8px;
+    font-size: 11px;
+    line-height: 1.4;
+    border-radius: 5px;
     box-shadow: none;
+    transform: none;
 }
 
 .comment-edit-button,
 .comment-save-button {
+    color: white;
     background: #365f98;
 }
 
+.comment-edit-button:hover,
+.comment-save-button:hover {
+    background: #284b7c;
+    transform: none;
+}
+
 .comment-delete-button {
+    color: white;
     background: #c94b45;
 }
 
 .comment-delete-button:hover {
     background: #a93631;
+    transform: none;
 }
 
 .comment-cancel-button {
@@ -1583,7 +1485,7 @@ button[type="reset"] {
 .comment-edit-area {
     display: grid;
     gap: 10px;
-    margin-top: 14px;
+    margin-top: 12px;
 }
 
 .comment-edit-input {
@@ -1592,29 +1494,48 @@ button[type="reset"] {
 
 .comment-edit-count {
     color: #607089;
-    font-size: 14px;
+    font-size: 13px;
     text-align: right;
 }
 
-.comment-edit-buttons {
-    display: flex;
-    justify-content: flex-end;
-    gap: 8px;
+.comment-edit-buttons button {
+    width: auto;
+    min-width: 60px;
+    margin: 0;
+    padding: 6px 12px;
+    font-size: 13px;
+    border-radius: 6px;
+    box-shadow: none;
 }
 
 @media (max-width: 650px) {
+    .comment-form-footer,
+    .comment-card-header {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .comment-form-footer button {
+        width: 100%;
+    }
+
+    .comment-author-area {
+        gap: 6px;
+    }
+
     .comment-date-area {
-        align-items: flex-start;
+        align-items: flex-end;
         flex-direction: column;
     }
 
     .comment-actions,
     .comment-edit-buttons {
-        width: 100%;
+        width: auto;
     }
 
     .comment-actions button,
     .comment-edit-buttons button {
-        flex: 1;
+        flex: none;
+        width: auto;
     }
 }

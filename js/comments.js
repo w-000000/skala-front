@@ -124,8 +124,19 @@ function startEditComment(
             ".comment-actions"
         );
 
+    if (
+        article.querySelector(
+            ".comment-edit-area"
+        )
+    ) {
+        return;
+    }
+
     contentElement.hidden = true;
-    actionArea.hidden = true;
+
+    if (actionArea) {
+        actionArea.hidden = true;
+    }
 
     const editArea =
         document.createElement("div");
@@ -237,8 +248,10 @@ function startEditComment(
                 contentElement.hidden =
                     false;
 
-                actionArea.hidden =
-                    false;
+                if (actionArea) {
+                    actionArea.hidden =
+                        false;
+                }
             }
         );
 
@@ -294,13 +307,24 @@ function createCommentElement(
     const article =
         document.createElement("article");
 
-    article.className = "comment-card";
+    article.className =
+        "comment-card";
 
     const header =
         document.createElement("div");
 
     header.className =
         "comment-card-header";
+
+    /*
+    작성자 이름과 수정·삭제 버튼을
+    한 줄로 묶는 영역
+    */
+    const authorArea =
+        document.createElement("div");
+
+    authorArea.className =
+        "comment-author-area";
 
     const author =
         document.createElement("strong");
@@ -310,56 +334,17 @@ function createCommentElement(
             comment.authorName ?? "사용자"
         }`;
 
-    const dateArea =
-        document.createElement("div");
-
-    dateArea.className =
-        "comment-date-area";
-
-    const date =
-        document.createElement("time");
-
-    date.textContent =
-        formatDate(comment.createdAt);
-
-    dateArea.appendChild(date);
-
-    if (comment.updatedAt) {
-        const edited =
-            document.createElement("span");
-
-        edited.className =
-            "comment-edited";
-
-        edited.textContent = "수정됨";
-
-        dateArea.appendChild(edited);
-    }
-
-    header.append(
-        author,
-        dateArea
-    );
-
-    const content =
-        document.createElement("p");
-
-    content.className =
-        "comment-content";
-
-    content.textContent =
-        comment.content ?? "";
-
-    article.append(
-        header,
-        content
-    );
+    authorArea.appendChild(author);
 
     const isOwner =
         currentUser &&
         currentUser.uid ===
             comment.authorId;
 
+    /*
+    본인이 작성한 댓글에만
+    수정·삭제 버튼 표시
+    */
     if (isOwner) {
         const actionArea =
             document.createElement("div");
@@ -396,10 +381,55 @@ function createCommentElement(
             deleteButton
         );
 
-        article.appendChild(
+        authorArea.appendChild(
             actionArea
         );
     }
+
+    const dateArea =
+        document.createElement("div");
+
+    dateArea.className =
+        "comment-date-area";
+
+    const date =
+        document.createElement("time");
+
+    date.textContent =
+        formatDate(comment.createdAt);
+
+    dateArea.appendChild(date);
+
+    if (comment.updatedAt) {
+        const edited =
+            document.createElement("span");
+
+        edited.className =
+            "comment-edited";
+
+        edited.textContent = "수정됨";
+
+        dateArea.appendChild(edited);
+    }
+
+    header.append(
+        authorArea,
+        dateArea
+    );
+
+    const content =
+        document.createElement("p");
+
+    content.className =
+        "comment-content";
+
+    content.textContent =
+        comment.content ?? "";
+
+    article.append(
+        header,
+        content
+    );
 
     return article;
 }
@@ -456,10 +486,6 @@ onAuthStateChanged(auth, (user) => {
         commentForm.hidden = true;
     }
 
-    /*
-    로그인 상태가 바뀌면
-    수정·삭제 버튼 표시도 다시 처리합니다.
-    */
     renderComments();
 });
 
@@ -521,7 +547,10 @@ commentForm.addEventListener(
 
         try {
             await addDoc(
-                collection(db, "comments"),
+                collection(
+                    db,
+                    "comments"
+                ),
                 {
                     content: content,
 

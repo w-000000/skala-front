@@ -16,9 +16,6 @@ const signupLink =
 const logoutButton =
     document.querySelector("#logoutButton");
 
-const signupShortcut =
-    document.querySelector("#signupShortcut");
-
 const loginUserInfo =
     document.querySelector("#loginUserInfo");
 
@@ -29,10 +26,6 @@ function showLoggedOutMenu() {
     loginLink.hidden = false;
     signupLink.hidden = false;
     logoutButton.hidden = true;
-
-    if (signupShortcut) {
-        signupShortcut.hidden = false;
-    }
 
     if (loginUserInfo) {
         loginUserInfo.hidden = true;
@@ -47,10 +40,6 @@ function showLoggedInMenu(user) {
     loginLink.hidden = true;
     signupLink.hidden = true;
     logoutButton.hidden = false;
-
-    if (signupShortcut) {
-        signupShortcut.hidden = true;
-    }
 
     if (loginUserInfo) {
         loginUserInfo.hidden = false;
