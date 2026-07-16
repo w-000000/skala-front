@@ -28,15 +28,19 @@ function getInputValue(selector) {
     return element.value.trim();
 }
 
+function isValidEmail(email) {
+    const emailPattern =
+        /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    return emailPattern.test(email);
+}
+
 function showMessage(message, isError = false) {
     signupMessage.textContent = message;
 
-    if (isError) {
-        signupMessage.style.color = "#c0392b";
-        return;
-    }
-
-    signupMessage.style.color = "#276749";
+    signupMessage.style.color = isError
+        ? "#c0392b"
+        : "#276749";
 }
 
 function setLoading(isLoading) {
@@ -57,11 +61,24 @@ signupForm.addEventListener("submit", async (event) => {
     signupMessage.textContent = "";
 
     const email = getInputValue("#userId");
+
     const password =
         document.querySelector("#password").value;
+
     const passwordCheck =
         document.querySelector("#passwordCheck").value;
+
     const name = getInputValue("#name");
+
+    if (!isValidEmail(email)) {
+        showMessage(
+            "아이디를 이메일 형식으로 입력해 주세요.",
+            true
+        );
+
+        document.querySelector("#userId").focus();
+        return;
+    }
 
     if (password !== passwordCheck) {
         showMessage(
@@ -110,6 +127,7 @@ signupForm.addEventListener("submit", async (event) => {
     setLoading(true);
 
     let createdUser = null;
+    let firestoreSaved = false;
 
     try {
         const userCredential =
@@ -125,7 +143,7 @@ signupForm.addEventListener("submit", async (event) => {
             uid: createdUser.uid,
 
             account: {
-                userId: email
+                email: email
             },
 
             personal: {
@@ -159,6 +177,7 @@ signupForm.addEventListener("submit", async (event) => {
 
             additional: {
                 joinPath: getInputValue("#joinPath"),
+
                 goal: getInputValue("#goal"),
 
                 introduction:
@@ -183,6 +202,8 @@ signupForm.addEventListener("submit", async (event) => {
             userDocument
         );
 
+        firestoreSaved = true;
+
         showMessage("회원가입이 완료되었습니다.");
 
         setTimeout(() => {
@@ -195,14 +216,10 @@ signupForm.addEventListener("submit", async (event) => {
         console.error("회원가입 오류:", error);
 
         /*
-        Authentication 계정 생성 후
-        Firestore 저장에서 실패한 경우,
-        계정만 남는 것을 방지하기 위해 삭제합니다.
+        Authentication 계정은 생성됐지만
+        Firestore 저장에 실패한 경우 계정을 삭제합니다.
         */
-        if (
-            createdUser &&
-            error.code === "permission-denied"
-        ) {
+        if (createdUser && !firestoreSaved) {
             try {
                 await deleteUser(createdUser);
             } catch (deleteError) {
@@ -223,7 +240,7 @@ signupForm.addEventListener("submit", async (event) => {
 
             case "auth/invalid-email":
                 showMessage(
-                    "이메일 형식이 올바르지 않습니다.",
+                    "아이디를 올바른 이메일 형식으로 입력해 주세요.",
                     true
                 );
                 break;
