@@ -6,7 +6,7 @@
 
     <meta
         name="description"
-        content="임창우의 관심사와 올해 계획을 소개하는 페이지"
+        content="임창우의 성장 과정, 관심사와 올해 계획을 소개하는 페이지"
     >
 
     <title>나의 소개</title>
@@ -14,21 +14,139 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body class="profile-page">
+<body class="site-page profile-page">
     <header>
-        <h1>👋 안녕하세요! 저를 소개합니다</h1>
+        <h1>👋 안녕하세요! 임창우입니다</h1>
 
         <p>
-            아래는 제가 좋아하는 것들과 올해의 계획,
-            그리고 저를 표현하는 단어들입니다.
+            2002년생 광주 출신으로,
+            소프트웨어와 인공지능 분야를 공부하고 있습니다.
         </p>
     </header>
 
     <main>
+        <section class="profile-summary">
+            <h2>🙋 나의 기본 정보</h2>
+
+            <div class="profile-info-grid">
+                <article class="profile-info-card">
+                    <span class="profile-info-icon">🎂</span>
+
+                    <div>
+                        <h3>출생 연도</h3>
+                        <p>2002년생</p>
+                    </div>
+                </article>
+
+                <article class="profile-info-card">
+                    <span class="profile-info-icon">📍</span>
+
+                    <div>
+                        <h3>출신 지역</h3>
+                        <p>광주광역시</p>
+                    </div>
+                </article>
+
+                <article class="profile-info-card">
+                    <span class="profile-info-icon">🏫</span>
+
+                    <div>
+                        <h3>전공</h3>
+                        <p>전북대학교 소프트웨어공학과</p>
+                    </div>
+                </article>
+
+                <article class="profile-info-card">
+                    <span class="profile-info-icon">💻</span>
+
+                    <div>
+                        <h3>관심 분야</h3>
+                        <p>소프트웨어 개발과 인공지능</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section>
+            <h2>🛤️ 나의 성장 과정</h2>
+
+            <div class="profile-timeline">
+                <article class="timeline-item">
+                    <time datetime="2021">2021년</time>
+
+                    <div>
+                        <h3>전북대학교 입학</h3>
+
+                        <p>
+                            전북대학교 소프트웨어공학과에 입학하여
+                            프로그래밍과 소프트웨어 개발에 대한
+                            기초 지식을 배우기 시작했습니다.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="timeline-item">
+                    <time datetime="2022">2022년</time>
+
+                    <div>
+                        <h3>육군 25사단 입대</h3>
+
+                        <p>
+                            육군 25사단에 입대하여 군 복무를 시작했습니다.
+                            군 생활을 통해 책임감과 협동심을 배웠습니다.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="timeline-item">
+                    <time datetime="2023">2023년</time>
+
+                    <div>
+                        <h3>군 복무 완료</h3>
+
+                        <p>
+                            군 복무를 마치고 전역한 뒤,
+                            앞으로의 학업과 진로를 준비했습니다.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="timeline-item">
+                    <time datetime="2024">2024년</time>
+
+                    <div>
+                        <h3>대학교 복학 및 연구실 활동</h3>
+
+                        <p>
+                            전북대학교 소프트웨어공학과에 복학하고
+                            AI&amp;SE 연구실 활동을 시작했습니다.
+                            소프트웨어공학과 인공지능 관련 연구와
+                            프로젝트를 경험했습니다.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="timeline-item">
+                    <time datetime="2026">2026년</time>
+
+                    <div>
+                        <h3>SKALA 교육 과정 입과</h3>
+
+                        <p>
+                            실무 중심의 개발 역량을 키우기 위해
+                            SKALA 교육 과정에 입과했습니다.
+                            현재 프론트엔드와 풀스택 개발 역량을
+                            체계적으로 학습하고 있습니다.
+                        </p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
         <section>
             <h2>🍽️ 내가 좋아하는 음식</h2>
 
-            <ul>
+            <ul class="profile-card-list">
                 <li>아이스 아메리카노 ☕</li>
                 <li>매콤한 떡볶이 🌶️</li>
                 <li>따뜻한 국밥 🍲</li>
@@ -36,54 +154,65 @@
             </ul>
         </section>
 
-        <hr>
-
         <section>
             <h2>📅 올해 할 일</h2>
 
-            <ol>
+            <ol class="profile-goal-list">
                 <li>SKALA 교육 과정을 성실하게 수료하기</li>
                 <li>꾸준히 운동해서 체력 키우기 💪</li>
                 <li>프론트엔드 기본기를 탄탄하게 익히기</li>
                 <li>새로운 프로그래밍 언어 배우기 💻</li>
+                <li>개인 프로젝트를 완성하고 GitHub에 정리하기</li>
             </ol>
         </section>
-
-        <hr>
 
         <section>
             <h2>✨ 나를 설명하는 단어들</h2>
 
-            <dl>
-                <dt>🔍 호기심</dt>
-                <dd>
-                    새로운 기술이나 흥미로운 주제를 발견하면
-                    직접 경험하고 배우는 것을 좋아합니다.
-                </dd>
+            <dl class="keyword-list">
+                <div>
+                    <dt>🔍 호기심</dt>
 
-                <dt>🟤 꾸준함</dt>
-                <dd>
-                    작은 계획이라도 세우고 끝까지 지키기 위해
-                    성실하게 노력합니다.
-                </dd>
+                    <dd>
+                        새로운 기술이나 흥미로운 주제를 발견하면
+                        직접 경험하고 배우는 것을 좋아합니다.
+                    </dd>
+                </div>
 
-                <dt>🤝 협업</dt>
-                <dd>
-                    다른 사람들과 의견을 나누고
-                    함께 문제를 해결하는 것을 좋아합니다.
-                </dd>
+                <div>
+                    <dt>🟤 꾸준함</dt>
 
-                <dt>🎨 창의성</dt>
-                <dd>
-                    기존 방식에만 머무르지 않고
-                    새로운 아이디어를 생각해보는 것을 좋아합니다.
-                </dd>
+                    <dd>
+                        작은 계획이라도 세우고 끝까지 지키기 위해
+                        성실하게 노력합니다.
+                    </dd>
+                </div>
+
+                <div>
+                    <dt>🤝 협업</dt>
+
+                    <dd>
+                        다른 사람들과 의견을 나누고
+                        함께 문제를 해결하는 것을 좋아합니다.
+                    </dd>
+                </div>
+
+                <div>
+                    <dt>🎨 창의성</dt>
+
+                    <dd>
+                        기존 방식에만 머무르지 않고
+                        새로운 아이디어를 생각해보는 것을 좋아합니다.
+                    </dd>
+                </div>
             </dl>
         </section>
     </main>
 
     <footer>
-        <p>작성자: 임창우</p>
+        <p>
+            <small>작성자: 임창우</small>
+        </p>
 
         <p>
             <a href="index.html">홈으로 돌아가기</a>

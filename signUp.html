@@ -11,178 +11,19 @@
 
     <title>회원가입</title>
 
-    <style>
-        * {
-            box-sizing: border-box;
-        }
-
-        body {
-            margin: 0;
-            padding: 40px 20px;
-            color: #25324a;
-            font-family: Arial, sans-serif;
-            background-color: #eef4fb;
-        }
-
-        main {
-            width: 750px;
-            max-width: 100%;
-            margin: 0 auto;
-            padding: 40px;
-            background-color: white;
-            border-radius: 24px;
-            box-shadow: 0 8px 24px rgba(51, 85, 130, 0.18);
-        }
-
-        h1 {
-            margin-top: 0;
-            color: #365f98;
-            text-align: center;
-        }
-
-        .description {
-            margin-bottom: 30px;
-            text-align: center;
-            line-height: 1.7;
-        }
-
-        fieldset {
-            margin-bottom: 25px;
-            padding: 25px;
-            border: 1px solid #cbd9e8;
-            border-radius: 14px;
-        }
-
-        legend {
-            padding: 0 10px;
-            color: #365f98;
-            font-size: 18px;
-            font-weight: bold;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group:last-child {
-            margin-bottom: 0;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: bold;
-        }
-
-        input,
-        select,
-        textarea {
-            width: 100%;
-            padding: 12px;
-            font-size: 16px;
-            font-family: inherit;
-            border: 1px solid #b8c9dc;
-            border-radius: 8px;
-        }
-
-        input:focus,
-        select:focus,
-        textarea:focus {
-            outline: 2px solid #92b8e2;
-            border-color: #365f98;
-        }
-
-        textarea {
-            min-height: 120px;
-            resize: vertical;
-        }
-
-        .inline-group {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-
-        .inline-group label {
-            display: inline;
-            margin: 0;
-            font-weight: normal;
-        }
-
-        .inline-group input {
-            width: auto;
-            margin-right: 5px;
-        }
-
-        .button-group {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 30px;
-        }
-
-        button {
-            min-width: 130px;
-            padding: 13px 20px;
-            font-size: 16px;
-            font-weight: bold;
-            border: 0;
-            border-radius: 10px;
-            cursor: pointer;
-        }
-
-        button[type="submit"] {
-            color: white;
-            background-color: #365f98;
-        }
-
-        button[type="submit"]:hover {
-            background-color: #284b7c;
-        }
-
-        button[type="reset"] {
-            color: #25324a;
-            background-color: #dfe9f4;
-        }
-
-        button[type="reset"]:hover {
-            background-color: #cddbeb;
-        }
-
-        .home-link {
-            margin-top: 30px;
-            text-align: center;
-        }
-
-        .home-link a {
-            color: #315b91;
-            font-weight: bold;
-        }
-
-        @media (max-width: 600px) {
-            main {
-                padding: 25px;
-            }
-
-            .button-group {
-                flex-direction: column;
-            }
-
-            button {
-                width: 100%;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
-    <main>
+<body class="site-page signup-page">
+    <header>
         <h1>🧑‍💻 회원가입</h1>
 
-        <p class="description">
+        <p>
             SKALA-FRONT 회원가입을 위해 아래 정보를 입력해 주세요.
         </p>
+    </header>
 
+    <main>
         <form action="signUpResult.html" method="get">
             <fieldset>
                 <legend>계정 정보</legend>
@@ -283,16 +124,36 @@
                 <legend>관심 분야</legend>
 
                 <div class="form-group">
-                    <p><strong>관심 있는 분야를 선택하세요.</strong></p>
+                    <p>
+                        <strong>관심 있는 분야를 선택하세요.</strong>
+                    </p>
 
                     <div class="inline-group">
                         <label>
                             <input
                                 type="checkbox"
                                 name="interest"
-                                value="web"
+                                value="frontend"
                             >
-                            웹 개발
+                            프론트엔드
+                        </label>
+
+                        <label>
+                            <input
+                                type="checkbox"
+                                name="interest"
+                                value="backend"
+                            >
+                            백엔드
+                        </label>
+
+                        <label>
+                            <input
+                                type="checkbox"
+                                name="interest"
+                                value="fullstack"
+                            >
+                            풀스택
                         </label>
 
                         <label>
@@ -302,6 +163,15 @@
                                 value="ai"
                             >
                             인공지능
+                        </label>
+
+                        <label>
+                            <input
+                                type="checkbox"
+                                name="interest"
+                                value="machineLearning"
+                            >
+                            머신러닝
                         </label>
 
                         <label>
@@ -326,15 +196,71 @@
                             <input
                                 type="checkbox"
                                 name="interest"
+                                value="security"
+                            >
+                            정보 보안
+                        </label>
+
+                        <label>
+                            <input
+                                type="checkbox"
+                                name="interest"
+                                value="mobile"
+                            >
+                            모바일 앱
+                        </label>
+
+                        <label>
+                            <input
+                                type="checkbox"
+                                name="interest"
+                                value="game"
+                            >
+                            게임 개발
+                        </label>
+
+                        <label>
+                            <input
+                                type="checkbox"
+                                name="interest"
+                                value="iot"
+                            >
+                            IoT
+                        </label>
+
+                        <label>
+                            <input
+                                type="checkbox"
+                                name="interest"
+                                value="devops"
+                            >
+                            DevOps
+                        </label>
+
+                        <label>
+                            <input
+                                type="checkbox"
+                                name="interest"
                                 value="git"
                             >
-                            Git
+                            Git &amp; GitHub
+                        </label>
+
+                        <label>
+                            <input
+                                type="checkbox"
+                                name="interest"
+                                value="uiux"
+                            >
+                            UI/UX 디자인
                         </label>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <p><strong>개발 경험이 있나요?</strong></p>
+                    <p>
+                        <strong>개발 경험이 있나요?</strong>
+                    </p>
 
                     <div class="inline-group">
                         <label>
@@ -357,10 +283,82 @@
                         </label>
                     </div>
                 </div>
+
+                <div class="form-group">
+                    <label for="experienceLevel">개발 경험 수준</label>
+
+                    <select
+                        id="experienceLevel"
+                        name="experienceLevel"
+                    >
+                        <option value="">
+                            경험 수준을 선택하세요
+                        </option>
+
+                        <option value="beginner">
+                            입문
+                        </option>
+
+                        <option value="basic">
+                            기초
+                        </option>
+
+                        <option value="intermediate">
+                            중급
+                        </option>
+
+                        <option value="advanced">
+                            고급
+                        </option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="favoriteLanguage">
+                        가장 관심 있는 프로그래밍 언어
+                    </label>
+
+                    <select
+                        id="favoriteLanguage"
+                        name="favoriteLanguage"
+                    >
+                        <option value="">
+                            언어를 선택하세요
+                        </option>
+
+                        <option value="javascript">
+                            JavaScript
+                        </option>
+
+                        <option value="java">
+                            Java
+                        </option>
+
+                        <option value="python">
+                            Python
+                        </option>
+
+                        <option value="cpp">
+                            C++
+                        </option>
+
+                        <option value="csharp">
+                            C#
+                        </option>
+
+                        <option value="typescript">
+                            TypeScript
+                        </option>
+
+                        <option value="other">
+                            기타
+                        </option>
+                    </select>
+                </div>
             </fieldset>
 
             <fieldset>
-                <legend>프로필 링크</legend>
+                <legend>프로필 및 활동 링크</legend>
 
                 <div class="form-group">
                     <label for="github">GitHub 주소</label>
@@ -373,7 +371,17 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="blog">블로그 주소</label>
+                    <label for="notion">Notion 주소</label>
+                    <input
+                        type="url"
+                        id="notion"
+                        name="notion"
+                        placeholder="https://www.notion.so/"
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="blog">기술 블로그 주소</label>
                     <input
                         type="url"
                         id="blog"
@@ -391,6 +399,26 @@
                         placeholder="https://"
                     >
                 </div>
+
+                <div class="form-group">
+                    <label for="linkedin">LinkedIn 주소</label>
+                    <input
+                        type="url"
+                        id="linkedin"
+                        name="linkedin"
+                        placeholder="https://www.linkedin.com/in/"
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="project">대표 프로젝트 주소</label>
+                    <input
+                        type="url"
+                        id="project"
+                        name="project"
+                        placeholder="https://"
+                    >
+                </div>
             </fieldset>
 
             <fieldset>
@@ -398,22 +426,89 @@
 
                 <div class="form-group">
                     <label for="joinPath">가입 경로</label>
-                    <select id="joinPath" name="joinPath">
-                        <option value="">가입 경로를 선택하세요</option>
-                        <option value="search">인터넷 검색</option>
-                        <option value="friend">친구 추천</option>
-                        <option value="school">학교 또는 교육기관</option>
-                        <option value="sns">SNS</option>
-                        <option value="other">기타</option>
+
+                    <select
+                        id="joinPath"
+                        name="joinPath"
+                    >
+                        <option value="">
+                            가입 경로를 선택하세요
+                        </option>
+
+                        <option value="search">
+                            인터넷 검색
+                        </option>
+
+                        <option value="friend">
+                            친구 추천
+                        </option>
+
+                        <option value="school">
+                            학교 또는 교육기관
+                        </option>
+
+                        <option value="sns">
+                            SNS
+                        </option>
+
+                        <option value="other">
+                            기타
+                        </option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="goal">학습 목표</label>
+
+                    <select
+                        id="goal"
+                        name="goal"
+                    >
+                        <option value="">
+                            학습 목표를 선택하세요
+                        </option>
+
+                        <option value="employment">
+                            취업 준비
+                        </option>
+
+                        <option value="project">
+                            프로젝트 제작
+                        </option>
+
+                        <option value="study">
+                            개인 학습
+                        </option>
+
+                        <option value="certificate">
+                            자격증 준비
+                        </option>
+
+                        <option value="career">
+                            실무 능력 향상
+                        </option>
                     </select>
                 </div>
 
                 <div class="form-group">
                     <label for="introduction">자기소개</label>
+
                     <textarea
                         id="introduction"
                         name="introduction"
                         placeholder="자신을 간단하게 소개해 주세요"
+                    ></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="expectation">
+                        SKALA-FRONT에서 기대하는 점
+                    </label>
+
+                    <textarea
+                        id="expectation"
+                        name="expectation"
+                        placeholder="배우고 싶은 내용이나 기대하는 점을 작성해 주세요"
                     ></textarea>
                 </div>
 
@@ -430,17 +525,45 @@
                         </label>
                     </div>
                 </div>
+
+                <div class="form-group">
+                    <div class="inline-group">
+                        <label>
+                            <input
+                                type="checkbox"
+                                name="emailAgreement"
+                                value="agree"
+                            >
+                            이메일을 통한 학습 소식 수신에 동의합니다.
+                        </label>
+                    </div>
+                </div>
             </fieldset>
 
             <div class="button-group">
-                <button type="submit">회원가입</button>
-                <button type="reset">다시 작성</button>
+                <button type="submit">
+                    회원가입
+                </button>
+
+                <button type="reset">
+                    다시 작성
+                </button>
             </div>
         </form>
-
-        <p class="home-link">
-            <a href="index.html">홈으로 돌아가기</a>
-        </p>
     </main>
+
+    <footer>
+        <p>
+            <a href="index.html">
+                홈으로 돌아가기
+            </a>
+        </p>
+
+        <p>
+            <small>
+                SKALA-FRONT 회원가입 페이지
+            </small>
+        </p>
+    </footer>
 </body>
 </html>

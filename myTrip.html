@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body class="trip-page">
+<body class="site-page trip-page">
     <header>
         <h1>🌍 나의 여행 앨범</h1>
 
@@ -27,94 +27,113 @@
         <section>
             <h2>🎵 여행할 때 듣는 음악</h2>
 
-            <audio controls autoplay loop>
-                <source
-                    src="media/music.mp3"
-                    type="audio/mpeg"
-                >
+            <div class="audio-card">
+                <audio controls autoplay loop>
+                    <source
+                        src="media/music.mp3"
+                        type="audio/mpeg"
+                    >
 
-                현재 브라우저에서는 오디오를 재생할 수 없습니다.
-            </audio>
+                    현재 브라우저에서는 오디오를 재생할 수 없습니다.
+                </audio>
 
-            <p class="media-note">
-                브라우저 설정에 따라 자동재생이 차단될 수 있습니다.
-                이 경우 재생 버튼을 눌러주세요.
-            </p>
+                <p class="media-note">
+                    브라우저 설정에 따라 자동재생이 차단될 수 있습니다.
+                    이 경우 재생 버튼을 눌러주세요.
+                </p>
+            </div>
         </section>
 
         <section>
             <h2>📸 기억에 남는 여행지</h2>
 
-            <figure>
-                <img
-                    src="media/australia.jpg"
-                    alt="호주의 여행 풍경"
-                    loading="lazy"
-                >
+            <div class="trip-gallery">
+                <figure>
+                    <img
+                        src="media/australia.jpg"
+                        alt="호주의 여행 풍경"
+                        loading="lazy"
+                    >
 
-                <figcaption>
-                    호주 — 넓은 자연과 여유로운 분위기
-                </figcaption>
-            </figure>
+                    <figcaption>
+                        <strong>호주</strong>
+                        <span>넓은 자연과 여유로운 분위기</span>
+                    </figcaption>
+                </figure>
 
-            <figure>
-                <img
-                    src="media/croatia.jpeg"
-                    alt="크로아티아의 여행 풍경"
-                    loading="lazy"
-                >
+                <figure>
+                    <img
+                        src="media/croatia.jpeg"
+                        alt="크로아티아의 여행 풍경"
+                        loading="lazy"
+                    >
 
-                <figcaption>
-                    크로아티아 — 아름다운 바다와 유럽의 거리
-                </figcaption>
-            </figure>
+                    <figcaption>
+                        <strong>크로아티아</strong>
+                        <span>아름다운 바다와 유럽의 거리</span>
+                    </figcaption>
+                </figure>
 
-            <figure>
-                <img
-                    src="media/malaysia.jpg"
-                    alt="말레이시아의 여행 풍경"
-                    loading="lazy"
-                >
+                <figure>
+                    <img
+                        src="media/malaysia.jpg"
+                        alt="말레이시아의 여행 풍경"
+                        loading="lazy"
+                    >
 
-                <figcaption>
-                    말레이시아 — 다양한 문화와 활기찬 도시
-                </figcaption>
-            </figure>
+                    <figcaption>
+                        <strong>말레이시아</strong>
+                        <span>다양한 문화와 활기찬 도시</span>
+                    </figcaption>
+                </figure>
 
-            <figure>
-                <img
-                    src="media/vietnam.jpeg"
-                    alt="베트남의 여행 풍경"
-                    loading="lazy"
-                >
+                <figure>
+                    <img
+                        src="media/vietnam.jpeg"
+                        alt="베트남의 여행 풍경"
+                        loading="lazy"
+                    >
 
-                <figcaption>
-                    베트남 — 맛있는 음식과 매력적인 거리
-                </figcaption>
-            </figure>
+                    <figcaption>
+                        <strong>베트남</strong>
+                        <span>맛있는 음식과 매력적인 거리</span>
+                    </figcaption>
+                </figure>
+            </div>
         </section>
 
         <section>
             <h2>🎬 크로아티아 여행 영상</h2>
 
-            <video controls>
-                <source
-                    src="media/croatia_travel.mp4"
-                    type="video/mp4"
-                >
+            <div class="video-card">
+                <video controls preload="metadata">
+                    <source
+                        src="media/croatia_travel.mp4"
+                        type="video/mp4"
+                    >
 
-                현재 브라우저에서는 영상을 재생할 수 없습니다.
-            </video>
+                    현재 브라우저에서는 영상을 재생할 수 없습니다.
+                </video>
 
-            <p>
-                크로아티아 여행 중 촬영한 풍경과 추억을 영상으로 기록했습니다.
-            </p>
+                <p>
+                    크로아티아 여행 중 촬영한 풍경과 추억을
+                    영상으로 기록했습니다.
+                </p>
+            </div>
         </section>
     </main>
 
     <footer>
         <p>
-            <a href="index.html">홈으로 돌아가기</a>
+            <a href="index.html">
+                홈으로 돌아가기
+            </a>
+        </p>
+
+        <p>
+            <small>
+                임창우의 여행 앨범
+            </small>
         </p>
     </footer>
 </body>
