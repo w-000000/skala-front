@@ -3,77 +3,171 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome SKALA</title>
 
-    <style>
-        body {
-            margin: 0;
-            min-height: 100vh;
-            color: #25324a;
-            font-family: Arial, sans-serif;
-            background-color: #eef4fb;
+    <meta
+        name="description"
+        content="임창우의 프로필, 강의 일정, 휴일 일과, 여행 기록을 모은 개인 포털"
+    >
 
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+    <title>임창우의 포털 Hub</title>
 
-        main {
-            width: 500px;
-            max-width: calc(100% - 40px);
-            padding: 40px;
-            text-align: center;
-
-            background-color: rgba(255, 255, 255, 0.9);
-            border-radius: 24px;
-            box-shadow: 0 8px 24px rgba(51, 85, 130, 0.2);
-        }
-
-        h1 {
-            margin-top: 0;
-            color: #365f98;
-            letter-spacing: 2px;
-        }
-
-        h2 {
-            margin-top: 30px;
-            color: #365f98;
-        }
-
-        p {
-            font-size: 18px;
-            line-height: 1.7;
-        }
-
-        a {
-            color: #315b91;
-            font-weight: bold;
-        }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
-    <main>
-        <h1>환영 인사</h1>
-        <p>스칼라에 오신 것을 환영합니다.</p>
-
-        <h2>바로가기</h2>
+<body class="home-page">
+    <header>
+        <h1>🚀 임창우의 포털 Hub</h1>
 
         <p>
-            <a href="myHoliday.html">나의 휴일 일과 보기</a>
+            프로필, 강의 일정, 휴일 일과와 여행 기록을
+            한곳에서 확인할 수 있는 개인 포털입니다.
         </p>
+    </header>
+
+    <nav aria-label="주요 페이지 메뉴">
+        <a href="myProfile.html">나의 소개</a>
+        <a href="myClass.html">강의 시간표</a>
+        <a href="myHoliday.html">휴일 일과</a>
+        <a href="myTrip.html">여행 앨범</a>
+        <a href="signUp.html">회원가입</a>
+    </nav>
+
+    <div class="layout">
+        <main class="main-content">
+            <section>
+                <h2>📂 바로가기 메뉴</h2>
+
+                <ul class="shortcut-list">
+                    <li>
+                        <a href="myProfile.html">
+                            👤 나의 소개 보기
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="myClass.html">
+                            🗓️ 나의 강의 시간표 보기
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="myHoliday.html">
+                            🏖️ 나의 휴일 일과 보기
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="myTrip.html">
+                            🌍 나의 여행 앨범 보기
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="signUp.html">
+                            🧑‍💻 회원가입 페이지 보기
+                        </a>
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>📌 오늘의 주요 소식</h2>
+
+                <article>
+                    <h3>여행 앨범에 새로운 영상 추가</h3>
+
+                    <p>
+                        크로아티아 여행 사진과 영상을 여행 앨범에 추가했습니다.
+                        여행지별 사진과 음악도 함께 감상할 수 있습니다.
+                    </p>
+
+                    <p>
+                        <small>작성일: 2026년 7월 15일</small>
+                    </p>
+                </article>
+            </section>
+
+            <section>
+                <h2>🖼️ 이달의 베스트 사진</h2>
+
+                <figure>
+                    <img
+                        src="media/croatia.jpeg"
+                        alt="크로아티아 여행 풍경"
+                        loading="lazy"
+                    >
+
+                    <figcaption>
+                        크로아티아에서 바라본 아름다운 여행 풍경
+                    </figcaption>
+                </figure>
+            </section>
+        </main>
+
+        <aside class="sidebar">
+            <section>
+                <h2>🙋 소개</h2>
+
+                <p>
+                    전북대학교 소프트웨어공학과에서 공부하고 있으며,
+                    새로운 기술을 배우고 직접 구현하는 것을 좋아합니다.
+                </p>
+            </section>
+
+            <section>
+                <h2>🔗 외부 링크</h2>
+
+                <ul>
+                    <li>
+                        <a
+                            href="https://github.com/w-000000"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            GitHub
+                        </a>
+                    </li>
+
+                    <li>
+                        <a
+                            href="https://www.notion.so/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Notion
+                        </a>
+                    </li>
+
+                    <li>
+                        <a
+                            href="https://developer.mozilla.org/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            MDN Web Docs
+                        </a>
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>💡 실시간 정보</h2>
+
+                <p>현재 위치: 대한민국 전주시 📍</p>
+                <p>관심 분야: 웹 개발, 인공지능, Git</p>
+                <p>현재 학습 과정: SKALA</p>
+            </section>
+        </aside>
+    </div>
+
+    <footer>
+        <p>이메일 문의: cwoo6115@jbnu.ac.kr</p>
 
         <p>
-            <a href="myProfile.html">나의 소개 보기</a>
+            <small>
+                © 2026 임창우 포털. HTML과 CSS로 제작되었습니다.
+            </small>
         </p>
-
-        <p>
-            <a href="myClass.html">나의 강의 시간표 보기</a>
-        </p>
-
-        <p>
-            <a href="myTrip.html">나의 여행 앨범 보기</a>
-        </p>
-    </main>
+    </footer>
 </body>
 </html>
