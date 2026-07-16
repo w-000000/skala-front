@@ -239,3 +239,63 @@
     ></script>
 </body>
 </html>
+/* 프로필 기본 정보 사진 */
+.profile-summary {
+    display: grid;
+    grid-template-columns: 280px minmax(0, 1fr);
+    align-items: stretch;
+    gap: 24px;
+}
+
+.profile-summary > h2 {
+    grid-column: 1 / -1;
+}
+
+.profile-photo {
+    display: grid;
+    grid-template-rows: minmax(0, 1fr) auto;
+    overflow: hidden;
+    margin: 0;
+    padding: 12px;
+    background: var(--surface-soft);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+}
+
+.profile-photo img {
+    width: 100%;
+    height: 100%;
+    min-height: 320px;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 16px;
+    box-shadow: none;
+}
+
+.profile-photo figcaption {
+    padding: 13px 5px 3px;
+    color: var(--muted);
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* 모바일 */
+@media (max-width: 786px) {
+    .profile-summary {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-summary > h2 {
+        grid-column: auto;
+    }
+
+    .profile-photo {
+        width: min(100%, 360px);
+        margin: 0 auto;
+    }
+
+    .profile-photo img {
+        height: 420px;
+    }
+}
