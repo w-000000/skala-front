@@ -1378,3 +1378,34 @@ button[type="reset"] {
         height: 210px;
     }
 }
+
+.auth-menu {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.auth-menu button {
+    width: auto;
+    margin: 0;
+    padding: 9px 14px;
+    color: white;
+    font: inherit;
+    background: #365f98;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.auth-menu button:hover {
+    background: #284b7c;
+}
+
+.auth-menu button:disabled {
+    cursor: wait;
+    opacity: 0.7;
+}
+
+[hidden] {
+    display: none !important;
+}
