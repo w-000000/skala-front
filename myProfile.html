@@ -25,7 +25,7 @@
             <a href="myProfile.html" aria-current="page">소개</a>
             <a href="portfolio.html">포트폴리오</a>
             <a href="myClass.html">강의</a>
-            <a href="myHoliday.html">일상</a>
+          <a href="myHoliday.html">휴일 일과</a>
             <a href="myTrip.html">여행</a>
             <a href="comments.html">댓글</a>
         </div>
@@ -41,8 +41,16 @@
         </p>
     </header>
 
+    <nav class="page-section-nav" aria-label="소개 페이지 이동 메뉴">
+        <a href="#profileInfo">기본 정보</a>
+        <a href="#growth">성장 과정</a>
+        <a href="#favoriteFood">좋아하는 음식</a>
+        <a href="#yearGoals">올해 할 일</a>
+        <a href="#keywords">나의 키워드</a>
+    </nav>
+
     <main id="pageContent">
-        <section class="profile-summary">
+        <section class="profile-summary" id="profileInfo">
             <h2>🙋 나의 기본 정보</h2>
 
             <figure class="profile-photo">
@@ -95,7 +103,7 @@
             </div>
         </section>
 
-        <section>
+        <section id="growth">
             <h2>🛤️ 나의 성장 과정</h2>
 
             <div class="profile-timeline">
@@ -171,7 +179,7 @@
             </div>
         </section>
 
-        <section>
+        <section id="favoriteFood">
             <h2>🍽️ 내가 좋아하는 음식</h2>
 
             <ul class="profile-card-list">
@@ -182,7 +190,7 @@
             </ul>
         </section>
 
-        <section>
+        <section id="yearGoals">
             <h2>📅 올해 할 일</h2>
 
             <ol class="profile-goal-list">
@@ -194,7 +202,7 @@
             </ol>
         </section>
 
-        <section>
+        <section id="keywords">
             <h2>✨ 나를 설명하는 단어들</h2>
 
             <dl class="keyword-list">

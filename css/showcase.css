@@ -1269,38 +1269,38 @@ html.dark-mode {
 .updown-records {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 7px;
-    margin: 20px 0 0;
+    gap: 8px;
+    margin: 22px 0 0;
 }
 
 .updown-records > div {
     min-width: 0;
-    padding: 11px 8px 10px;
-    background: rgba(255, 255, 255, 0.055);
-    border: 1px solid rgba(255, 255, 255, 0.09);
-    border-radius: 11px;
+    padding: 14px 9px 13px;
+    background: rgba(255, 255, 255, 0.075);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 13px;
 }
 
 .updown-records dt {
-    color: rgba(255, 255, 255, 0.38);
-    font-size: 7px;
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 11px;
     font-weight: 950;
     line-height: 1;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.07em;
 }
 
 .updown-records dd {
     display: flex;
     align-items: baseline;
-    gap: 3px;
-    margin: 7px 0 0;
+    gap: 4px;
+    margin: 10px 0 0;
     color: white;
     line-height: 1;
 }
 
 .updown-records strong {
     overflow: hidden;
-    font-size: 21px;
+    font-size: 28px;
     font-weight: 950;
     line-height: 1;
     letter-spacing: -0.06em;
@@ -1309,7 +1309,7 @@ html.dark-mode {
 
 .updown-records small {
     color: var(--mission-lime);
-    font-size: 8px;
+    font-size: 10px;
     font-weight: 900;
 }
 
@@ -1445,44 +1445,73 @@ html.dark-mode {
 }
 
 /* 포트폴리오 쇼케이스 */
+.showcase-portfolio {
+    --inner-accent: var(--mission-lime);
+    --inner-accent-rgb: 200, 255, 101;
+    --inner-ink: var(--mission-ink);
+    --inner-surface: #ffffff;
+    --inner-text: #172036;
+    --inner-line: rgba(11, 16, 32, 0.12);
+}
+
 .showcase-portfolio .portfolio-hero {
-    min-height: 72vh;
-    padding: 120px max(24px, calc((100vw - 1240px) / 2)) 90px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    min-height: 54vh;
+    padding: 110px max(24px, calc((100% - 1180px) / 2)) 86px;
+    overflow: hidden;
     color: white;
     text-align: left;
     background:
-        radial-gradient(circle at 76% 34%, rgba(119, 124, 255, 0.36), transparent 24%),
-        radial-gradient(circle at 20% 10%, rgba(200, 255, 101, 0.08), transparent 22%),
-        var(--mission-ink);
-    border-radius: 0 0 54px 54px;
+        radial-gradient(
+            circle at 74% 34%,
+            rgba(var(--inner-accent-rgb), 0.22),
+            transparent 25%
+        ),
+        var(--inner-ink);
+    border-radius: 0 0 50px 50px;
+    box-shadow: 0 30px 75px rgba(11, 16, 32, 0.23);
+    isolation: isolate;
 }
 
 .showcase-portfolio .portfolio-hero::before {
     inset: 0;
+    z-index: -2;
     width: auto;
     height: auto;
     background-image:
         linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
-    background-size: 72px 72px;
+    background-size: 70px 70px;
     border-radius: 0;
-    mask-image: linear-gradient(to bottom, black, transparent);
+    mask-image: linear-gradient(to bottom, black 15%, transparent 95%);
 }
 
 .showcase-portfolio .portfolio-hero::after {
-    right: 8%;
-    bottom: -220px;
-    left: auto;
-    width: 440px;
-    height: 440px;
-    background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.13);
+    right: auto;
+    bottom: -86px;
+    left: max(20px, calc((100% - 1260px) / 2));
+    z-index: -1;
+    width: auto;
+    height: auto;
+    color: transparent;
+    font-size: clamp(190px, 22vw, 340px);
+    font-weight: 950;
+    line-height: 1;
+    content: "02";
+    background: none;
+    border: 0;
+    border-radius: 0;
+    -webkit-text-stroke: 1px rgba(var(--inner-accent-rgb), 0.24);
 }
 
 .portfolio-hero-inner {
     position: relative;
     z-index: 2;
-    width: min(100%, 1240px);
+    width: min(100%, 1180px);
 }
 
 .showcase-portfolio .portfolio-kicker {
@@ -1536,30 +1565,36 @@ html.dark-mode {
 }
 
 .showcase-portfolio .portfolio-nav {
-    display: grid;
-    grid-template-columns: auto 1fr;
+    position: sticky;
+    display: flex;
     align-items: center;
-    padding: 12px max(20px, calc((100vw - 1240px) / 2));
+    justify-content: center;
+    padding: 13px 20px;
     background: rgba(11, 16, 32, 0.92);
     backdrop-filter: blur(16px);
 }
 
 .showcase-portfolio .portfolio-home {
+    position: absolute;
+    top: 50%;
+    left: max(20px, calc((100vw - 1240px) / 2));
     color: white;
     font-size: 14px;
     font-weight: 950;
+    transform: translateY(-50%);
 }
 
 .portfolio-nav-links {
     display: flex;
-    justify-content: flex-end;
-    gap: 2px;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
 }
 
 .showcase-portfolio .portfolio-nav a {
-    padding: 8px 13px;
+    padding: 10px 17px;
     color: rgba(255, 255, 255, 0.64);
-    font-size: 12px;
+    font-size: 13px;
     border: 0;
 }
 
@@ -1569,9 +1604,9 @@ html.dark-mode {
 }
 
 .showcase-portfolio > main {
-    width: min(1240px, calc(100% - 48px));
+    width: min(1180px, calc(100% - 48px));
     max-width: none;
-    margin: 76px auto;
+    margin: 72px auto;
     padding: 0;
     background: transparent;
     border: 0;
@@ -1581,34 +1616,49 @@ html.dark-mode {
 }
 
 .showcase-portfolio > main > section {
-    margin-bottom: 112px;
+    position: relative;
+    margin: 0 0 24px;
+    padding: clamp(28px, 4vw, 44px);
+    overflow: hidden;
+    color: var(--inner-text);
+    background: var(--inner-surface);
+    border: 1px solid var(--inner-line);
+    border-radius: 28px;
+    box-shadow: 0 16px 45px rgba(11, 16, 32, 0.07);
     counter-increment: portfolioSection;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.showcase-portfolio > main > section:hover {
+    border-color: rgba(var(--inner-accent-rgb), 0.45);
+    box-shadow: 0 24px 65px rgba(11, 16, 32, 0.1);
 }
 
 .showcase-portfolio > main > section > h2 {
     display: grid;
-    grid-template-columns: 62px minmax(0, 1fr);
+    grid-template-columns: 55px minmax(0, 1fr);
     align-items: center;
-    gap: 18px;
-    margin-bottom: 34px;
+    gap: 15px;
+    margin: 0 0 30px;
     padding: 0 0 20px;
-    color: var(--mission-ink);
-    font-size: clamp(32px, 4vw, 52px);
+    color: var(--inner-text);
+    font-size: clamp(28px, 3.6vw, 43px);
+    line-height: 1.15;
     letter-spacing: -0.05em;
     background: none;
     border: 0;
-    border-bottom: 1px solid var(--mission-line);
+    border-bottom: 1px solid var(--inner-line);
 }
 
 .showcase-portfolio > main > section > h2::before {
     display: grid;
     place-items: center;
-    width: 52px;
+    width: 48px;
     height: 30px;
     margin: 0;
     content: "0" counter(portfolioSection);
     color: var(--mission-ink);
-    font-size: 10px;
+    font-size: 9px;
     font-weight: 950;
     letter-spacing: 0.1em;
     background: var(--mission-lime);
@@ -1807,7 +1857,19 @@ html.dark-mode .mission-home .mission-sidebar h2 {
 html.dark-mode .showcase-portfolio > main > section > h2 {
     background: none;
     border: 0;
-    border-bottom: 1px solid var(--mission-line);
+    border-bottom: 1px solid var(--inner-line);
+}
+
+html.dark-mode .showcase-portfolio {
+    --inner-surface: #151d30;
+    --inner-text: #f0f3fa;
+    --inner-line: rgba(255, 255, 255, 0.11);
+}
+
+html.dark-mode .showcase-portfolio > main > section {
+    color: var(--inner-text);
+    background: var(--inner-surface);
+    border-color: var(--inner-line);
 }
 
 html.dark-mode .mission-home .main-content,
@@ -2181,7 +2243,7 @@ html.dark-mode .showcase-portfolio .award-card:first-child time {
     }
 
     .showcase-portfolio > main > section {
-        margin-bottom: 76px;
+        margin-bottom: 24px;
     }
 
     .showcase-portfolio > main > section > h2 {
@@ -2298,7 +2360,8 @@ html.dark-mode .showcase-inner {
 }
 
 /* Inner global navigation */
-.showcase-inner > .inner-page-nav {
+.showcase-inner > .inner-page-nav,
+.showcase-portfolio > .inner-page-nav {
     position: absolute;
     top: 0;
     left: 50%;
@@ -2315,7 +2378,14 @@ html.dark-mode .showcase-inner {
     transform: translateX(-50%);
 }
 
-.showcase-inner .inner-page-brand {
+.showcase-portfolio > .inner-page-nav {
+    --inner-accent: var(--mission-lime);
+    --inner-ink: var(--mission-ink);
+    width: min(1180px, calc(100% - 48px));
+}
+
+.showcase-inner .inner-page-brand,
+.showcase-portfolio .inner-page-brand {
     flex: 0 0 auto;
     color: white;
     font-size: 21px;
@@ -2323,13 +2393,15 @@ html.dark-mode .showcase-inner {
     letter-spacing: -0.06em;
 }
 
-.showcase-inner .inner-page-brand span {
+.showcase-inner .inner-page-brand span,
+.showcase-portfolio .inner-page-brand span {
     color: var(--inner-accent);
     font-size: 12px;
     letter-spacing: -0.03em;
 }
 
-.showcase-inner .inner-page-links {
+.showcase-inner .inner-page-links,
+.showcase-portfolio .inner-page-links {
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -2337,7 +2409,8 @@ html.dark-mode .showcase-inner {
     min-width: 0;
 }
 
-.showcase-inner .inner-page-links a {
+.showcase-inner .inner-page-links a,
+.showcase-portfolio .inner-page-links a {
     position: relative;
     padding: 10px 13px;
     color: rgba(255, 255, 255, 0.63);
@@ -2348,12 +2421,14 @@ html.dark-mode .showcase-inner {
     transition: color 0.2s, background 0.2s;
 }
 
-.showcase-inner .inner-page-links a:hover {
+.showcase-inner .inner-page-links a:hover,
+.showcase-portfolio .inner-page-links a:hover {
     color: white;
     background: rgba(255, 255, 255, 0.08);
 }
 
-.showcase-inner .inner-page-links a[aria-current="page"] {
+.showcase-inner .inner-page-links a[aria-current="page"],
+.showcase-portfolio .inner-page-links a[aria-current="page"] {
     color: var(--inner-ink);
     background: var(--inner-accent);
 }
@@ -2415,10 +2490,17 @@ html.dark-mode .showcase-inner {
 }
 
 .showcase-inner.profile-page > header::after { content: "01"; }
-.showcase-inner.class-page > header::after { content: "02"; }
-.showcase-inner.holiday-page > header::after { content: "03"; }
-.showcase-inner.trip-page > header::after { content: "04"; }
-.showcase-inner.comments-page > header::after { content: "05"; }
+.showcase-inner.class-page > header::after { content: "03"; }
+.showcase-inner.holiday-page > header::after { content: "04"; }
+.showcase-inner.trip-page > header::after { content: "05"; }
+.showcase-inner.comments-page > header::after { content: "06"; }
+
+.showcase-inner > header::after,
+.showcase-portfolio .portfolio-hero::after {
+    right: auto;
+    bottom: -55px;
+    left: max(20px, calc((100% - 1260px) / 2));
+}
 
 .showcase-inner > header .inner-kicker {
     position: relative;
@@ -2448,6 +2530,12 @@ html.dark-mode .showcase-inner {
     text-shadow: none;
 }
 
+.showcase-inner.profile-page > header h1 {
+    max-width: none;
+    font-size: clamp(20px, 5.2vw, 76px);
+    white-space: nowrap;
+}
+
 .showcase-inner > header > p:not(.inner-kicker) {
     position: relative;
     z-index: 2;
@@ -2463,6 +2551,13 @@ html.dark-mode .showcase-inner {
     color: var(--inner-ink);
     background: var(--inner-accent);
     border-radius: 999px;
+}
+
+.showcase-inner.holiday-page > header mark {
+    padding: 0;
+    color: inherit;
+    background: transparent;
+    border-radius: 0;
 }
 
 /* Inner main sections */
@@ -2703,6 +2798,42 @@ html.dark-mode .showcase-inner {
 }
 
 /* Holiday routine */
+.showcase-inner .page-section-nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 13px 20px;
+    background: rgba(11, 16, 32, 0.93);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 14px 35px rgba(10, 18, 38, 0.18);
+    backdrop-filter: blur(16px);
+}
+
+.showcase-inner .page-section-nav a {
+    margin: 0;
+    padding: 10px 17px;
+    color: rgba(255, 255, 255, 0.67);
+    font-size: 13px;
+    font-weight: 700;
+    white-space: nowrap;
+    border: 0;
+    border-radius: 999px;
+}
+
+.showcase-inner .page-section-nav a:hover {
+    color: var(--inner-ink);
+    background: var(--inner-accent);
+}
+
+.showcase-inner .page-section-nav + main section {
+    scroll-margin-top: 90px;
+}
+
 .showcase-inner.holiday-page .holiday-nav {
     padding: 13px 20px;
     background: rgba(11, 16, 32, 0.93);
@@ -2909,25 +3040,32 @@ html.dark-mode .showcase-inner {
     margin: 0;
 }
 
-.showcase-inner footer a[href="index.html"] {
-    position: static;
+.showcase-inner footer a[href="index.html"],
+.showcase-portfolio footer a[href="index.html"] {
+    position: fixed;
+    top: 18px;
+    left: 18px;
+    z-index: 3000;
     padding: 11px 16px;
     color: white;
     font-size: 12px;
     font-weight: 900;
-    background: rgba(255, 255, 255, 0.08);
+    background: rgba(11, 16, 32, 0.82);
     border: 1px solid rgba(255, 255, 255, 0.16);
     border-radius: 999px;
-    box-shadow: none;
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.18);
+    backdrop-filter: blur(12px);
 }
 
-.showcase-inner footer a[href="index.html"]::before {
+.showcase-inner footer a[href="index.html"]::before,
+.showcase-portfolio footer a[href="index.html"]::before {
     content: "← ";
 }
 
-.showcase-inner footer a[href="index.html"]:hover {
-    color: var(--inner-ink);
-    background: var(--inner-accent);
+.showcase-inner footer a[href="index.html"]:hover,
+.showcase-portfolio footer a[href="index.html"]:hover {
+    color: #0b1020;
+    background: #c8ff65;
 }
 
 /* Inner dark mode */
@@ -2994,17 +3132,21 @@ html.dark-mode .showcase-inner textarea {
 
 /* Inner responsive */
 @media (max-width: 900px) {
-    .showcase-inner > header {
+    .showcase-inner > header,
+    .showcase-portfolio .portfolio-hero {
         min-height: 500px;
     }
 
-    .showcase-inner > header::after {
-        right: 4%;
-        bottom: -45px;
+    .showcase-inner > header::after,
+    .showcase-portfolio .portfolio-hero::after {
+        right: auto;
+        bottom: -25px;
+        left: 4%;
         font-size: 200px;
     }
 
-    .showcase-inner > main {
+    .showcase-inner > main,
+    .showcase-portfolio > main {
         width: min(100% - 28px, 1180px);
         margin: 45px auto;
     }
@@ -3015,33 +3157,40 @@ html.dark-mode .showcase-inner textarea {
 }
 
 @media (max-width: 786px) {
-    .showcase-inner > .inner-page-nav {
+    .showcase-inner > .inner-page-nav,
+    .showcase-portfolio > .inner-page-nav {
         gap: 14px;
         width: calc(100% - 28px);
         height: 72px;
     }
 
-    .showcase-inner .inner-page-brand {
-        font-size: 18px;
+    .showcase-inner .inner-page-brand,
+    .showcase-portfolio .inner-page-brand {
+        display: none;
     }
 
-    .showcase-inner .inner-page-links {
+    .showcase-inner .inner-page-links,
+    .showcase-portfolio .inner-page-links {
+        width: 100%;
         justify-content: flex-start;
         gap: 2px;
         overflow-x: auto;
         scrollbar-width: none;
     }
 
-    .showcase-inner .inner-page-links::-webkit-scrollbar {
+    .showcase-inner .inner-page-links::-webkit-scrollbar,
+    .showcase-portfolio .inner-page-links::-webkit-scrollbar {
         display: none;
     }
 
-    .showcase-inner .inner-page-links a {
+    .showcase-inner .inner-page-links a,
+    .showcase-portfolio .inner-page-links a {
         padding: 8px 10px;
         font-size: 11px;
     }
 
-    .showcase-inner > header {
+    .showcase-inner > header,
+    .showcase-portfolio .portfolio-hero {
         min-height: 440px;
         padding: 95px 20px 70px;
         border-radius: 0 0 30px 30px;
@@ -3055,27 +3204,33 @@ html.dark-mode .showcase-inner textarea {
         font-size: 15px;
     }
 
-    .showcase-inner > header::after {
-        bottom: -20px;
+    .showcase-inner > header::after,
+    .showcase-portfolio .portfolio-hero::after {
+        right: auto;
+        bottom: 0;
+        left: 4%;
         font-size: 145px;
     }
 
     .showcase-inner > main,
     .showcase-inner.trip-page > main,
-    .showcase-inner.comments-page > main {
+    .showcase-inner.comments-page > main,
+    .showcase-portfolio > main {
         width: min(100% - 20px, 1180px);
         margin: 34px auto;
     }
 
     .showcase-inner > main > section,
-    .showcase-inner > main > .container > section {
+    .showcase-inner > main > .container > section,
+    .showcase-portfolio > main > section {
         padding: 22px;
         border-radius: 22px;
     }
 
     .showcase-inner > main > section > h2,
     .showcase-inner > main > .container > section > h2,
-    .showcase-inner .comment-list-heading > h2 {
+    .showcase-inner .comment-list-heading > h2,
+    .showcase-portfolio > main > section > h2 {
         grid-template-columns: 1fr;
         gap: 11px;
         font-size: 29px;
@@ -3098,14 +3253,28 @@ html.dark-mode .showcase-inner textarea {
         height: 265px;
     }
 
-    .showcase-inner.holiday-page .holiday-nav {
+    .showcase-inner.holiday-page .holiday-nav,
+    .showcase-inner .page-section-nav,
+    .showcase-portfolio .portfolio-nav {
         gap: 5px;
         padding: 9px;
     }
 
-    .showcase-inner.holiday-page .holiday-nav a {
+    .showcase-inner.holiday-page .holiday-nav a,
+    .showcase-inner .page-section-nav a,
+    .showcase-portfolio .portfolio-nav a {
         padding: 8px 11px;
         font-size: 11px;
+    }
+
+    .showcase-portfolio .portfolio-home {
+        display: none;
+    }
+
+    .showcase-portfolio .portfolio-nav-links {
+        justify-content: center;
+        gap: 5px;
+        overflow-x: auto;
     }
 
     .showcase-inner > footer {
@@ -3115,8 +3284,11 @@ html.dark-mode .showcase-inner textarea {
         margin-top: 50px;
     }
 
-    .showcase-inner footer a[href="index.html"] {
+    .showcase-inner footer a[href="index.html"],
+    .showcase-portfolio footer a[href="index.html"] {
+        top: 10px;
+        left: 10px;
         padding: 9px 12px;
-        font-size: 10px;
+        font-size: 11px;
     }
 }
