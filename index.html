@@ -362,12 +362,162 @@
 
         <aside class="sidebar mission-sidebar mission-sidebar-right">
             <section
+                class="location-card"
+                data-reveal
+                data-spotlight
+            >
+                <div class="location-card-heading">
+                    <p class="section-label">REALTIME INFO</p>
+                    <span>
+                        <i aria-hidden="true"></i>
+                        DEVICE
+                    </span>
+                </div>
+
+                <h2>실시간 위치 정보</h2>
+
+                <div class="current-location-panel">
+                    <p>
+                        <span>현재 위치:</span>
+                        <strong id="currentLocationValue">
+                            확인 중...
+                        </strong>
+                    </p>
+
+                    <p
+                        class="location-details"
+                        id="currentLocationDetails"
+                        role="status"
+                        aria-live="polite"
+                    >
+                        브라우저 위치 권한을 확인하고 있습니다.
+                    </p>
+                </div>
+
+                <button
+                    type="button"
+                    class="location-refresh-button"
+                    id="locationRefreshButton"
+                >
+                    <span>정확한 위치 확인</span>
+                    <span aria-hidden="true">↻</span>
+                </button>
+
+                <p class="location-privacy">
+                    브라우저와 macOS의 위치 권한이 필요합니다.
+                </p>
+            </section>
+
+            <section
+                class="weather-card"
+                data-reveal
+                data-spotlight
+            >
+                <div class="weather-card-heading">
+                    <p class="section-label">JS CHALLENGE · 01</p>
+                    <span>LIVE API</span>
+                </div>
+
+                <h2>실시간 날씨 정보</h2>
+
+                <p class="weather-description">
+                    도시를 선택하면 현재 온도와 습도를 실시간으로 확인합니다.
+                </p>
+
+                <label
+                    class="weather-select-label"
+                    for="weatherCitySelect"
+                >
+                    도시 선택
+                </label>
+
+                <div class="weather-select-wrap">
+                    <select id="weatherCitySelect">
+                        <option
+                            value="gwangju"
+                            data-name="대한민국 광주"
+                            data-country="KR"
+                            data-latitude="35.1595"
+                            data-longitude="126.8526"
+                        >
+                            대한민국 광주 KR
+                        </option>
+                        <option
+                            value="jeonju"
+                            data-name="대한민국 전주"
+                            data-country="KR"
+                            data-latitude="35.8242"
+                            data-longitude="127.1480"
+                        >
+                            대한민국 전주 KR
+                        </option>
+                        <option
+                            value="seoul"
+                            data-name="대한민국 서울"
+                            data-country="KR"
+                            data-latitude="37.5665"
+                            data-longitude="126.9780"
+                        >
+                            대한민국 서울 KR
+                        </option>
+                        <option
+                            value="busan"
+                            data-name="대한민국 부산"
+                            data-country="KR"
+                            data-latitude="35.1796"
+                            data-longitude="129.0756"
+                        >
+                            대한민국 부산 KR
+                        </option>
+                        <option
+                            value="tokyo"
+                            data-name="일본 도쿄"
+                            data-country="JP"
+                            data-latitude="35.6762"
+                            data-longitude="139.6503"
+                        >
+                            일본 도쿄 JP
+                        </option>
+                        <option
+                            value="paris"
+                            data-name="프랑스 파리"
+                            data-country="FR"
+                            data-latitude="48.8566"
+                            data-longitude="2.3522"
+                        >
+                            프랑스 파리 FR
+                        </option>
+                    </select>
+                    <span aria-hidden="true">⌄</span>
+                </div>
+
+                <div
+                    class="weather-box is-loading"
+                    id="weather-box"
+                    role="status"
+                    aria-live="polite"
+                >
+                    <p class="weather-loading">
+                        <span aria-hidden="true"></span>
+                        광주 날씨 불러오는 중...
+                    </p>
+                    <p class="weather-coordinates">
+                        LAT 35.1595 · LON 126.8526
+                    </p>
+                </div>
+
+                <p class="weather-source">
+                    OPEN-METEO · ASYNC / AWAIT
+                </p>
+            </section>
+
+            <section
                 class="updown-card"
                 data-reveal
                 data-spotlight
             >
                 <div class="updown-card-heading">
-                    <p class="section-label">JS CHALLENGE · 01</p>
+                    <p class="section-label">JS CHALLENGE · 02</p>
                     <span>1—50</span>
                 </div>
 
@@ -444,7 +594,7 @@
                 data-spotlight
             >
                 <div class="grade-card-heading">
-                    <p class="section-label">JS CHALLENGE · 02</p>
+                    <p class="section-label">JS CHALLENGE · 03</p>
                     <span>3 SUBJECTS</span>
                 </div>
 
@@ -500,7 +650,7 @@
                 data-spotlight
             >
                 <div class="bag-card-heading">
-                    <p class="section-label">JS CHALLENGE · 03</p>
+                    <p class="section-label">JS CHALLENGE · 04</p>
                     <span>BAG</span>
                 </div>
 
@@ -632,5 +782,7 @@
     <script src="script/upDown.js" defer></script>
     <script src="script/grade.js" defer></script>
     <script type="module" src="script/bag.js"></script>
+    <script type="module" src="script/location.js"></script>
+    <script type="module" src="script/realtimeInfo.js"></script>
 </body>
 </html>
