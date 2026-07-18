@@ -656,6 +656,191 @@ html.dark-mode {
     border-bottom: 1px solid var(--mission-ink);
 }
 
+/* 무료 LLM 기반 사이트 안내 */
+.ai-guide-section {
+    margin-bottom: 40px;
+}
+
+.ai-guide-card {
+    --spot-x: 50%;
+    --spot-y: 50%;
+    position: relative;
+    padding: clamp(22px, 4vw, 42px);
+    overflow: hidden;
+    color: white;
+    background:
+        radial-gradient(
+            520px circle at var(--spot-x) var(--spot-y),
+            rgba(200, 255, 101, 0.12),
+            transparent 48%
+        ),
+        var(--mission-ink);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 30px;
+    box-shadow: var(--mission-shadow);
+}
+
+.ai-guide-status {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin-bottom: 24px;
+    color: rgba(255, 255, 255, 0.58);
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 0.12em;
+}
+
+.ai-guide-status span {
+    width: 9px;
+    height: 9px;
+    background: var(--mission-lime);
+    border-radius: 50%;
+    box-shadow: 0 0 18px rgba(200, 255, 101, 0.72);
+}
+
+.ai-guide-messages {
+    display: grid;
+    gap: 12px;
+    max-height: 390px;
+    min-height: 110px;
+    margin-bottom: 18px;
+    padding-right: 4px;
+    overflow-y: auto;
+}
+
+.ai-message {
+    width: fit-content;
+    max-width: min(82%, 620px);
+    padding: 17px 20px;
+    font-size: 18px;
+    line-height: 1.65;
+    text-align: left;
+    white-space: pre-wrap;
+    border-radius: 18px;
+}
+
+.ai-message-assistant {
+    justify-self: start;
+    color: rgba(255, 255, 255, 0.86);
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom-left-radius: 5px;
+}
+
+.ai-message-user {
+    justify-self: end;
+    color: var(--mission-ink);
+    font-weight: 750;
+    background: var(--mission-lime);
+    border-bottom-right-radius: 5px;
+}
+
+.ai-message-error {
+    color: #ffd1c2;
+    border-color: rgba(255, 137, 95, 0.35);
+}
+
+.ai-guide-suggestions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 14px;
+}
+
+.mission-home .ai-guide-suggestions button {
+    width: auto;
+    margin: 0;
+    min-height: 44px;
+    padding: 10px 16px;
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 15px;
+    font-weight: 850;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 999px;
+    box-shadow: none;
+}
+
+.mission-home .ai-guide-suggestions button:hover {
+    color: white;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.ai-guide-form {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.ai-guide-form textarea {
+    min-height: 58px;
+    padding: 15px 17px;
+    resize: vertical;
+    color: white;
+    font: inherit;
+    line-height: 1.5;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 16px;
+    outline: none;
+}
+
+.ai-guide-form textarea:focus {
+    border-color: var(--mission-lime);
+    box-shadow: 0 0 0 3px rgba(200, 255, 101, 0.12);
+}
+
+.ai-guide-form textarea::placeholder {
+    color: rgba(255, 255, 255, 0.38);
+}
+
+.mission-home .ai-guide-form button {
+    width: 100%;
+    min-height: 54px;
+    margin: 0;
+    padding: 14px 20px;
+    color: var(--mission-ink);
+    font-size: 16px;
+    font-weight: 950;
+    background: var(--mission-lime);
+    border: 0;
+    border-radius: 16px;
+    box-shadow: none;
+}
+
+.mission-home .ai-guide-form button:disabled {
+    cursor: wait;
+    opacity: 0.58;
+}
+
+.mission-home .ai-guide-note {
+    margin: 12px 2px 0;
+    color: rgba(255, 255, 255, 0.42);
+    font-size: 11px;
+}
+
+@media (max-width: 650px) {
+    .mission-home .ai-guide-form button {
+        min-height: 54px;
+    }
+
+    .ai-message {
+        max-width: 92%;
+    }
+}
+
 /* Bento 메뉴 */
 .bento-grid {
     display: grid;

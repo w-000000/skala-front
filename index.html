@@ -126,6 +126,7 @@
           <a href="myHoliday.html">휴일 일과</a>
             <a href="myTrip.html">여행</a>
             <a href="comments.html">댓글</a>
+            <a href="#aiGuide">AI 질문</a>
         </div>
 
         <div class="auth-menu">
@@ -357,6 +358,62 @@
                         <div class="agent-node agent-feedback">Feedback</div>
                     </div>
                 </article>
+            </section>
+
+            <section
+                class="mission-section ai-guide-section"
+                id="aiGuide"
+                data-reveal
+            >
+                <div class="mission-section-heading">
+                    <p class="section-label">03 · AI GUIDE</p>
+                    <h2>AI에게 질문하세요.</h2>
+                    <p>
+                        임창우님의 프로필과 프로젝트, 이 페이지에 대해
+                        궁금한 내용을 물어보세요.
+                    </p>
+                </div>
+
+                <div class="ai-guide-card" data-spotlight>
+                    <div class="ai-guide-status">
+                        <span aria-hidden="true"></span>
+                        FREE LLM · QWEN
+                    </div>
+
+                    <div
+                        class="ai-guide-messages"
+                        id="aiGuideMessages"
+                        aria-live="polite"
+                    >
+                        <div class="ai-message ai-message-assistant">안녕하세요. 임창우님의 활동과 이 웹사이트에 대해 궁금한 내용을 질문해 주세요.</div>
+                    </div>
+
+                    <div class="ai-guide-suggestions" aria-label="추천 질문">
+                        <button type="button">주요 프로젝트를 알려줘</button>
+                        <button type="button">사용할 수 있는 기술은 무엇인가요?</button>
+                        <button type="button">어떤 사람인지 소개해 줘</button>
+                    </div>
+
+                    <form class="ai-guide-form" id="aiGuideForm">
+                        <label class="sr-only" for="aiGuideQuestion">
+                            AI에게 질문하기
+                        </label>
+                        <textarea
+                            id="aiGuideQuestion"
+                            maxlength="300"
+                            rows="2"
+                            placeholder="임창우님이나 페이지에 대해 질문해 보세요."
+                            required
+                        ></textarea>
+                        <button type="submit" id="aiGuideSubmit">
+                            질문하기 <span aria-hidden="true">↗</span>
+                        </button>
+                    </form>
+
+                    <p class="ai-guide-note">
+                        사이트에 공개된 정보만 답변하며, 없는 내용은 추측하지 않습니다.
+                    </p>
+                </div>
             </section>
         </main>
 
@@ -767,6 +824,7 @@
     <script type="module" src="js/auth-menu.js"></script>
     <script type="module" src="js/theme.js"></script>
     <script src="js/showcase.js" defer></script>
+    <script src="js/ai-guide.js" defer></script>
     <script src="script/upDown.js" defer></script>
     <script src="script/grade.js" defer></script>
     <script type="module" src="script/bag.js"></script>
